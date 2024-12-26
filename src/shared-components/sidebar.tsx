@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from "../../public/trackify-white.svg";
 import home from "../assets/home.svg";
 import expenseManagement from "../assets/expense.svg";

@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import cross from "../../assets/cross.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCategory, getCategory } from "../../hooks/slices/categoriesSlice";
+import { fetchCategory } from "../../hooks/slices/categoriesSlice";
 import { fetchType } from "../../hooks/slices/typeSlice";
 import AddExpense from "../../apis/add-expense";
 import { Spinner } from "../../shared-components/spinner";

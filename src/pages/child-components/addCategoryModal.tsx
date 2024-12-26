@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { z } from "zod";
 import cross from "../../assets/cross.svg";
 import { Spinner } from "../../shared-components/spinner";
@@ -17,7 +17,7 @@ type ModalProps = {
 };
 function AddCategoryModal({ isOpen, onClose, userId, updateData }: ModalProps) {
   const dispatch = useDispatch();
-  const categories = useSelector((state: any) => state.category);
+  // const categories = useSelector((state: any) => state.category);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [loader, setLoader] = useState(false);
   const schema = z.object({
@@ -35,7 +35,7 @@ function AddCategoryModal({ isOpen, onClose, userId, updateData }: ModalProps) {
     mode: "onChange",
   });
   const submitModal = async (data: schemaType) => {
-    // setLoader(true);
+    setLoader(true);
     try {
       if (updateData == undefined) {
         await dispatch(addCategory({ userId, data }) as any);

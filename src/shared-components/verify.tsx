@@ -1,8 +1,8 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { z } from "zod";
-import { setUser, setVerified } from "../hooks/slices/userSlice";
+import { setVerified } from "../hooks/slices/userSlice";
 import { VerifyKey } from "../apis/verify";
 import { UpdateVerifyKey } from "../apis/updateVerifyKey";
 
@@ -18,7 +18,7 @@ function Verify({ userId }: { userId: string }) {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors },
   } = useForm<verifySchemaType>({
     mode: "onChange",
     resolver: zodResolver(verifySchema),

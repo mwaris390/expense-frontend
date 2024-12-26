@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { z } from "zod";
@@ -21,7 +21,7 @@ function AddBudgetModal({ isModal, onClose, userId, updateData }: ModalProps) {
     return state.category.categoryData;
   });
   const dispatch = useDispatch();
-  const [loader, setLoader] = useState(false);
+  const [loader] = useState(false);
   const schema = z.object({
     categoryId: z.string().min(1, "Category required").uuid(),
     startDate: z

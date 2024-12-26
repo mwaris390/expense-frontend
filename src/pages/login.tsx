@@ -1,11 +1,11 @@
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import logo from "../assets/trackify.svg";
 import { Button } from "../shared-components/button";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { LoginUser } from "../apis/login";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setUser } from "../hooks/slices/userSlice";
 export function Login() {
   const navigate = useNavigate();

@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 
 export async function DeleteBudget(id: string) {
   try {
-    const response = await toast.promise(
+    await toast.promise(
       axios.delete("expense-budget", {
         data: {
           id,

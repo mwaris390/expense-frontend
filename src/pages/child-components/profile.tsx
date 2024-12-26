@@ -5,7 +5,7 @@ import cancel from "../../assets/cross-white.svg";
 import edit from "../../assets/edit.svg";
 import userCover from "../../assets/user-cover.svg";
 import { ReadUser } from "../../apis/read-user";
-import { object, z } from "zod";
+import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import UpdateUser from "../../apis/update-user";
