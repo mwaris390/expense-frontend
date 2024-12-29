@@ -10,6 +10,7 @@ import { UserProfile } from "./pages/child-components/profile";
 import { ManageCategories } from "./pages/child-components/manageCatgories";
 import { ManageTypes } from "./pages/child-components/manageTypes";
 import { BudgetSetter } from "./pages/child-components/budgetSetter";
+import { Analytics } from "@vercel/analytics/react";
 const route = createBrowserRouter([
   {
     path: "/",
@@ -63,7 +64,12 @@ const route = createBrowserRouter([
   },
 ]);
 function App() {
-  return <RouterProvider router={route} />;
+  return (
+    <div>
+      <RouterProvider router={route} />
+      <Analytics />
+    </div>
+  );
 }
 
 export default App;
