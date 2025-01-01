@@ -207,7 +207,7 @@ export function UserProfile() {
                   />
                 </div>
               </div>
-              <div className="mt-4">
+              {/* <div className="mt-4">
                 <label
                   htmlFor="profilePic"
                   className="flex justify-between items-center bg-accent text-white font-bold rounded-lg py-1 px-3 shadow w-fit cursor-pointer"
@@ -222,7 +222,7 @@ export function UserProfile() {
                     onChange={changeProfilePicEvent}
                   />
                 </label>
-              </div>
+              </div> */}
               <div className="my-4 flex  items-center">
                 <button
                   onClick={changeProfileCancelEvent}

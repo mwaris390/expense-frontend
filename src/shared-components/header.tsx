@@ -93,7 +93,7 @@ export function Header() {
         </div>
       </div>
       {isNotificationBox && (
-        <div className="bg-white w-[30%] right-14 top-16 h-[500px] absolute shadow-md rounded-xl p-4 overflow-hidden">
+        <div className="bg-white w-[30%] right-14 top-16 h-[500px] absolute shadow-md rounded-xl p-4 overflow-hidden z-[1000]">
           <h4 className="text-accent border-b-2 border-secondary mb-2 ">
             Notifications
           </h4>
