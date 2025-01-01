@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import verify from "../../assets/verify.svg";
 import cancel from "../../assets/cross-white.svg";
@@ -9,8 +9,8 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import UpdateUser from "../../apis/update-user";
-import toast from "react-hot-toast";
-import UploadImage from "../../apis/patch-image";
+// import toast from "react-hot-toast";
+// import UploadImage from "../../apis/patch-image";
 import { ResetPassword } from "../../apis/reset-password";
 type User = {
   id: string;
@@ -30,7 +30,7 @@ export function UserProfile() {
   const [userData, setUserData] = useState<User | null>(null);
   const [editProfile, setEditProfile] = useState(false);
   const [editPassword, setPassword] = useState(false);
-  const fileInput = useRef<HTMLInputElement | null>(null);
+  // const fileInput = useRef<HTMLInputElement | null>(null);
 
   const userSchema = z.object({
     fname: z.string().min(1, "First name required"),
@@ -128,28 +128,28 @@ export function UserProfile() {
     }
   };
 
-  const changeProfilePicEvent = async (e: any) => {
-    const file = e.target.files[0];
-    if (
-      file.type == "image/jpeg" ||
-      file.type == "image/png" ||
-      file.type == "image/jpg"
-    ) {
-      console.log(file);
-      const formData = new FormData();
-      formData.append("id", user.id);
-      formData.append("file", file);
-      let response = await UploadImage(formData);
-      if (response) {
-        fetchUser();
-      }
-    } else {
-      toast.error("Un-Supported file type");
-    }
-    if (fileInput.current) {
-      fileInput.current.value = "";
-    }
-  };
+  // const changeProfilePicEvent = async (e: any) => {
+  //   const file = e.target.files[0];
+  //   if (
+  //     file.type == "image/jpeg" ||
+  //     file.type == "image/png" ||
+  //     file.type == "image/jpg"
+  //   ) {
+  //     console.log(file);
+  //     const formData = new FormData();
+  //     formData.append("id", user.id);
+  //     formData.append("file", file);
+  //     let response = await UploadImage(formData);
+  //     if (response) {
+  //       fetchUser();
+  //     }
+  //   } else {
+  //     toast.error("Un-Supported file type");
+  //   }
+  //   if (fileInput.current) {
+  //     fileInput.current.value = "";
+  //   }
+  // };
 
   const fetchUser = async () => {
     setUserData(await ReadUser(user.id));
