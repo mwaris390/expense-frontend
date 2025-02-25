@@ -1,30 +1,37 @@
-# React + TypeScript + Vite
+# Trackify
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Table of Contents
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [User Guide](#user-guide)
+  - [Using the Application](#using-the-application)
 
-Currently, two official plugins are available:
+## Introduction
+Trackify is a powerful **Expense Tracking App** that helps users monitor their spending, categorize expenses, and receive real-time notifications. It includes insightful dashboards and authentication features to ensure a seamless and secure experience. [**Visit Link**](https://expense-frontend-jet.vercel.app/login)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- **Budget Tracking**: Set and track budgets for different expense categories.
+- **Personalized Categories**: Create custom expense and income categories.
+- **Real-Time Notifications**: Get live updates on transactions via **Socket.io**.
+- **Email Verification**: Secure authentication with email-based verification.
+- **Dashboard Insights**: Visualize income and expense trends with interactive charts.
+- **Secure API**: Authentication with **JWT (JSON Web Tokens)**.
+- **Scalable & Deployable**: Runs efficiently using **Docker** and is deployed on **Vercel and Render**.
 
-## Expanding the ESLint configuration
+## Technologies Used
+- **Frontend**: React 18, TailwindCSS
+- **Backend**: Node.js, Express, PostgreSQL, JWT Authentication, NodeMailer
+- **Real-Time Communication**: Socket.io
+- **Deployment**: Vercel (Frontend), Render (Backend)
+- **Containerization**: Docker
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+### Using the Application
+1. **Register/Login**: Create an account and verify your email.
+2. **Manage Expenses**: Add transactions, categorize expenses, and set budgets.
+3. **Track Finances**: View insightful reports on the dashboard.
+4. **Get Notified**: Receive real-time updates for financial activities.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
